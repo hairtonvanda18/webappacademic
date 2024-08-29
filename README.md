@@ -1,27 +1,44 @@
 # Sistema de Gestão de Releases
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+## Descrição do Projeto
 
-## Development server
+O **Sistema de Gestão de Releases** é uma dashboard desenvolvida para facilitar a gestão de versões dentro de um sistema. Este projeto permite acompanhar e gerenciar releases, visualizar detalhes sobre cada versão e adicionar novas versões de maneira eficiente. A interface foi projetada para proporcionar uma experiência intuitiva e organizada, permitindo que os usuários possam controlar e monitorar as diferentes versões do sistema com facilidade.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A dashboard foi implementada em **Angular** e oferece uma visualização clara das versões, suas datas de publicação, e detalhes associados. O projeto visa simplificar o processo de gerenciamento de releases e garantir que as equipes possam manter o controle sobre as atualizações e alterações no sistema.
 
-## Code scaffolding
+## Links Importantes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Visualize a interface no Figma](https://www.figma.com/file/EXEMPLO/Link-para-o-Figma) - Explore o design da dashboard e os detalhes da interface.
 
-## Build
+## Tecnologias Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**: Framework para desenvolvimento de aplicações web.
+- **TypeScript**: Linguagem utilizada para desenvolvimento do projeto.
+- **Tailwind CSS**: Framework de estilização para uma interface responsiva e moderna.
 
-## Running unit tests
+## Pré-requisitos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Antes de rodar o projeto, verifique se você tem os seguintes itens instalados:
 
-## Running end-to-end tests
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [Angular CLI](https://angular.io/cli) (versão 12 ou superior)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Instalação
 
-## Further help
+1. **Clone o repositório**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/username/repository.git
+   cd repository
+Instale as dependências
+
+Execute o comando a seguir para instalar todas as dependências do projeto:
+
+npm install
+Execução do Projeto
+Para rodar o projeto localmente, utilize o seguinte comando:
+
+```bash
+
+Licença
+Este projeto está licenciado sob a MIT License.
