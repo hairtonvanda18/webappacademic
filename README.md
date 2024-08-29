@@ -8,7 +8,7 @@ A dashboard foi implementada em **Angular** e oferece uma visualização clara d
 
 ## Links Importantes
 
-- [Visualize a interface no Figma](https://www.figma.com/file/EXEMPLO/Link-para-o-Figma](https://www.figma.com/design/9YnVyJ3VO9ORG6yqk04TBI/Dashboard-Tradesee?node-id=1-2&m=dev&t=mZT4mWF0RRsIlot8-1 ) - Explore o design da dashboard e os detalhes da interface.
+- [Visualize a interface no Figma](https://www.figma.com/design/9YnVyJ3VO9ORG6yqk04TBI/Dashboard-Tradesee?node-id=1-2&m=dev&t=mZT4mWF0RRsIlot8-1) - Explore o design da dashboard e os detalhes da interface.
 
 ## Tecnologias Utilizadas
 
