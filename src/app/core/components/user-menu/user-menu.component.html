@@ -1,0 +1,32 @@
+<button (click)="onSelect()" (blur)="onHide()"
+  class="w-[47px] h-[47px] border border-border-primary rounded-full overflow-hidden">
+  <img class="w-full h-full" src="assets/images/user-image.png" alt="user image">
+
+  <div [@toggleHeight]="isSelected ? 'show' : 'hide'" class="absolute right-0 z-40 flex flex-col w-auto min-w-[230px] py-3 mt-3 bg-card-header border border-border-primary rounded-[10px] shadow-login">
+    <div class="flex items-center gap-2 px-3">
+      <div class="w-[40px] h-[40px] border border-border-primary rounded-full overflow-hidden">
+        <img class="w-full h-full" src="assets/images/user-image.png" alt="user image">
+      </div>
+      <div class="flex flex-col text-left">
+        <span class="font-semibold text-sm">
+          {{ userData?.nomeCompleto }}
+        </span>
+        <span class="font-medium text-xs text-text-800">
+          {{ userData?.email }}
+        </span>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3 px-3 py-4 mt-3 font-medium bg-[#FCFCFC] border-y border-border-primary">
+      <a class="flex items-center gap-2 text-sm cursor-pointer hover:underline">
+        <img src="assets/icons/settings.svg" alt="icon">
+        Definições
+      </a>
+      <a (click)="logout()" class="flex items-center gap-2 text-sm cursor-pointer hover:underline">
+        <img src="assets/icons/logout.svg" alt="icon">
+        Terminar a Sessão
+      </a>
+    </div>
+  </div>
+
+</button>

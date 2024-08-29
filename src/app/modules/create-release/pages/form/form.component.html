@@ -1,0 +1,97 @@
+<div class="flex items-end justify-between pb-4 border-b border-[#EFEFEF]">
+  <div>
+    <h1 class="font-semibold text-2xl text-[#2C2C2C]">Registar Release</h1>
+    <p class="text-sm text-text-600">Registe a sua release vinculada a um sistema.</p>
+  </div>
+</div>
+
+<div class="card mt-6">
+  <div class="card-header flex justify-between">
+    <h1 class="font-medium">Dados da Release</h1>
+
+    <button (click)="showAddJson = true" class="flex items-center justify-center w-[30px] h-[30px] bg-white border border-border-primary rounded-md">
+      <img src="assets/icons/json.svg" alt="icon">
+    </button>
+  </div>
+
+  <form [formGroup]="formData" class="card-body grid grid-cols-1 md:grid-cols-3 gap-4 p-[1.4rem]">
+    <app-select formControlName="sistema" label="Sistema" [returnID]="true" [list]="systems" class="w-full" />
+    
+    <app-input
+      [formControl]="ultimaVersao"
+      label="Última Versão"
+      [placeholder]="isLoadingVersion ? 'Carregando a versão...' : 'Sistema não especificado'"
+      [disabled]="true"
+      class="w-full"
+    />
+    
+    <app-input formControlName="versao" label="Nova Versão" class="w-full" />
+    
+    <app-input-data formControlName="dataPublicacao" label="Data da Publicação" type="datetime-local" class="w-full" />
+  
+    <div class="bg-white col-span-full border border-border-primary rounded-xl overflow-x-auto">
+      <table class="table-style min-w-full">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Descrição</th>
+            <th>Número da Solicitação</th>
+            <th>Tipo da Solicitação</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of itens; track item) {
+            <tr>
+              <td>{{ item.titulo }}</td>
+              <td>{{ item.descricao }}</td>
+              <td>{{ item.numeroSolicitacao }}</td>
+              <td>{{ item.tipoSolicitacao | appRequest }}</td>
+              <td>
+                <app-popover-item (delete)="removeItem(item)" />
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      
+      <div class="flex flex-col md:flex-row items-center justify-between px-5 py-4 text-sm text-text-800">
+        <span>{{ itens.size }} Itens adicionados</span>
+  
+        <button (click)="showAddItem = true" class="flex items-center justify-center w-[30px] h-[30px] border border-border-primary rounded-md mt-4 md:mt-0">
+          <img src="assets/icons/plus.svg" alt="icon">
+        </button>
+      </div>
+    </div>
+  </form>
+  
+  <div class="card-footer">
+    <div class="align-middle flex justify-end gap-3">
+      <button [disabled]="isSubmitting" (click)="cleanForm()" class="p-2 rounded-lg text-slate-800 border border-border-secundary">
+        Limpar
+      </button>
+
+      <button (click)="submitForm()" [disabled]="isSubmitting" class="flex gap-2 py-2 px-3 bg-primary rounded-lg text-white disabled:bg-primary/85 disabled:cursor-not-allowed">
+        {{ isSubmitting ? 'Registando...' : 'Registar' }}
+
+        @if (isSubmitting) {
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+</div>
+
+@if (showAddItem) {
+  <app-modal title="Adicionar Item" (closeModal)="showAddItem = false">
+    <app-add-item />
+  </app-modal>
+}
+
+@if (showAddJson) {
+  <app-modal title="Adicionar JSON" (closeModal)="showAddJson = false">
+    <app-add-json />
+  </app-modal>
+}

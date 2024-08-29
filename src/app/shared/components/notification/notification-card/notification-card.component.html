@@ -1,0 +1,10 @@
+@if (notification) {
+  <div [@inOutAnimation]="'in'" [style.backgroundColor]="notification.bgColor" [style.color]='notification.textColor' [class.move]="!animate"
+    class="flex flex-col justify-start fixed right-0 bottom-0 w-[23rem] m-5 p-4 rounded-md z-[9999]">
+
+    <span class="w-full inline-block pl-2 font-medium text-sm">
+      {{notification.message}}
+    </span>
+
+  </div>
+}

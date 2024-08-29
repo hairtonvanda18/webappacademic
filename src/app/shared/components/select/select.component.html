@@ -1,0 +1,24 @@
+<label class="text-sm text-text-600" for="document">
+  {{ label }}
+
+  @if (required) {
+    <span class="text-red-0">*</span>
+  }
+</label>
+<div (click)="handleOpen()" [class.disabled]="disabled" tabindex="1" (blur)="hideDrop()" class="relative w-full px-5 py-3 h-[2.7rem] rounded-[9.13px] text-sm bg-background-input border border-border-secundary text-text-800  placeholder-text-600 hover:border-border-secundary focus:outline-border-secundary cursor-pointer">
+  <div class="flex items-center justify-between gap-8 ">
+    <span class="text-text-800">{{placeholder}}</span>
+    <img src="assets/icons/arrow-down.svg" alt="icon">
+  </div>
+  <div [@toggleHeight]="isOpened ? 'show' : 'hide'" [(ngModel)]="messageValue" ngDefaultControl class="absolute right-0 top-14 z-40 flex flex-col w-full max-h-48 overflow-y-auto bg-background-input overflow-hidden border border-border-primary rounded-[9.13px]">
+    @for (item of list; track item.id) {
+      <a
+        (click)="handleSelect(item)"
+        [class.bg-slate-100]="selectedItem?.id === item.id"
+        [class.font-medium]="selectedItem?.id === item.id"
+        class="px-3 py-3 border-b border-border-primary">
+        {{item.value}}
+      </a>
+    }
+  </div>
+</div>

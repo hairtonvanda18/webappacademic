@@ -1,0 +1,25 @@
+<button
+  (click)="onSelect()"
+  (blur)="onHide()"
+  [class.bg-primary]="isSelected"
+  class="relative flex items-center justify-center w-[30px] h-[30px] border border-border-primary rounded-md cursor-pointer"
+>
+  @if (isSelected) {
+    <img src="assets/icons/more-icon-white.svg" alt="icon">
+  }
+  @else {
+    <img src="assets/icons/more-icon.svg" alt="icon">
+  }
+
+
+  @if (isSelected) {
+    <div class="absolute top-9 right-0 z-20 bg-white border border-border-primary divide-y divide-gray-100 rounded-lg shadow">
+      <a class="flex items-center gap-2 px-4 py-2 font-medium text-red-0">
+        <div class="flex items-center justify-center w-[30px] h-[30px] border border-border-secundary rounded-lg">
+          <img src="assets/icons/dustbin.svg" alt="icon">
+        </div>
+        Eliminar
+      </a>
+    </div>
+  }
+</button>

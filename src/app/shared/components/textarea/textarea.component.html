@@ -1,0 +1,8 @@
+<label for="" class="text-sm text-text-600">
+  {{label}}
+
+  @if (required) {
+    <span class="text-red-0">*</span>
+  }
+</label>
+<textarea [placeholder]="placeholder" [disabled]="disabled" [(ngModel)]="messageValue" ngDefaultControl rows="4" class="rounded-lg w-full block text-sm p-2 bg-background-input border border-border-secundary text-text-800  placeholder-text-600 hover:border-border-secundary focus:outline-border-secundary disabled:opacity-70"></textarea>

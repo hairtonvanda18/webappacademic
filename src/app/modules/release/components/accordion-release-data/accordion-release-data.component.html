@@ -1,0 +1,5 @@
+<form [formGroup]="formData" class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
+  <app-select formControlName="sistema" label="Sistema" [list]="systems" [disabled]="true" class="w-full" />
+  <app-input formControlName="versao" label="Versão" [disabled]="true" class="w-full" />
+  <app-input-data formControlName="dataPublicacao" label="Data da Publicação" [disabled]="true" class="w-full" />
+</form>

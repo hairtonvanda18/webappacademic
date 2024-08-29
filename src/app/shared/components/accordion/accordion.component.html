@@ -1,0 +1,11 @@
+<div class="w-full bg-[#F5F5F5]">
+  <div class="header flex items-center justify-between pl-5 pr-3 py-3 border-b cursor-pointer" [class.border-b-0]="isLast" (click)="toggleAccordion()">
+      <span class="font-medium text-base">{{titulo()}}</span>
+      <a class="bg-[#F9F9F9] flex items-center justify-center rounded-lg text-[#2E3361] font-bold text-xl p-1 mr-2 border border-solid w-[30px] h-[30px] border-border-secundary">
+        <img src="assets/icons/arrow-down.svg" [class.active]="isOpen" alt="icon">
+      </a>
+  </div>
+  <div class="bg-[#FCFCFC]" [@toggleHeight]="isOpen ? 'show' : 'hide'" [class.mb-2]="isLast && isOpen">
+      <ng-content></ng-content>
+  </div>
+</div>

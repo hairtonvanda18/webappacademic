@@ -1,0 +1,28 @@
+<aside class="fixed flex flex-col items-center w-aside h-screen px-4 py-4 bg-primary" [class.w-aside-hidden]="!asideService.state()">
+  <a routerLink="/releases">
+    <img [src]="'assets/logos/logo-light' + (asideService.state() ? '' : '-mini') +'.svg'" alt="logo">
+  </a>
+  <div class="w-full h-[1px] bg-[#383F6B] mt-4 mb-8"></div>
+  <button (click)="asideService.setState()" class="absolute -right-[15px] flex items-center justify-center w-7 h-7 bg-background-input border border-border-primary rounded-full">
+    <img
+      src="assets/icons/arrow-left.svg"
+      alt="seta"
+      [class.rotate-180]="!asideService.state()"
+    >
+  </button>
+  <ul class="w-full">
+    @for (item of listMenus; track item.name) {
+      <li>
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="bg-[#4D5178]"
+          [title]="item.name"
+          class="flex gap-3 w-full px-[14px] py-[10px] text-white rounded-[9.13px] mb-3 cursor-pointer"
+        >
+          <img [src]="item.icon" alt="icon">
+          {{ asideService.state() ? item.name : '' }}
+        </a>
+      </li>
+    }
+  </ul>
+</aside>

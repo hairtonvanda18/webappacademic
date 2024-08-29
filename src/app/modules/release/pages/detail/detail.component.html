@@ -1,0 +1,17 @@
+<div class="flex items-end justify-between mb-8 border-b border-[#EFEFEF]">
+  <div class="flex items-center mb-5">
+    <a (click)="paginaAnterior()" class="flex items-center justify-center w-8 h-8 rounded-lg text-[#2E3361] font-bold text-xl cursor-pointer bg-gray-50 p-1 px-1 mr-2 border border-solid border-gray-300">
+        <img src="assets/icons/arrow_left.svg"  alt="icon">
+    </a>
+    <h1 class="font-semibold text-2xl text-[#2C2C2C]">Detalhe da Release</h1>
+  </div>
+</div>
+
+
+
+  <div class="card h-auto overflow-hidden">
+    <app-accordion titulo="Dados da Release" [isOpen]="true">
+      <app-accordion-release-data/>
+    </app-accordion>
+  </div>
+

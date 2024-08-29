@@ -1,0 +1,10 @@
+<label for="" class="text-sm text-text-600">
+  {{ label }}
+
+  @if (required) {
+    <span class="text-red-0">*</span>
+  }
+</label>
+<div [class.disabled]="disabled" class="flex items-center justify-end date-input-wrapper">
+    <input [type]="type" [(ngModel)]="messageValue" class="rounded-lg w-full h-[2.7rem] text-sm p-2 bg-background-input border border-border-secundary text-text-800  placeholder-text-600 hover:border-border-secundary focus:outline-border-secundary" />
+</div>

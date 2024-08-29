@@ -1,0 +1,17 @@
+<form [formGroup]="formData">
+  <div class="grid grid-cols-1 md:grid-cols-2 w-full md:w-96 p-4 md:p-6 gap-4 md:gap-8 text-sm modal-content border border-border-primary">
+    <app-textarea formControlName="code" [label]="'Código Json'" placeholder="Digite o código" class="col-span-full" />
+  </div>
+
+  <div class="card-footer flex flex-col md:flex-row gap-4 p-4">
+    <div class="flex justify-center md:justify-end gap-3">
+      <button type="button" (click)="formData.reset()" class="p-2 rounded-lg text-slate-800 border border-border-secundary disabled:bg-primary/85 disabled:cursor-not-allowed">
+        Limpar
+      </button>
+
+      <button type="button" (click)="submitForm()" class="flex gap-2 p-2 bg-primary rounded-lg text-white">
+        Adicionar
+      </button>
+    </div>
+  </div>
+</form>

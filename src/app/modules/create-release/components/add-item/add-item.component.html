@@ -1,0 +1,20 @@
+<form [formGroup]="formItem">
+  <div class="grid grid-cols-1 md:grid-cols-2 p-4 md:p-6 gap-4 md:gap-8 text-sm modal-content border border-border-primary">
+    <app-input formControlName="titulo" label="Titulo" placeholder="Digite o titulo" class="col-span-full" />
+    <app-input formControlName="numeroSolicitacao" label="Número da Solicitação" placeholder="Digite o número" type="number" />
+    <app-select formControlName="tipoSolicitacao" label="Tipo de Solicitação" placeholder="Selecione o tipo" [returnID]="true" [list]="requestType" />
+    <app-textarea formControlName="descricao" [label]="'Descrição do Item'" placeholder="Digite a Descrição" class="col-span-full" />
+  </div>
+
+  <div class="card-footer grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0">
+    <div class="align-middle flex justify-center md:justify-end gap-3">
+      <button type="button" (click)="formItem.reset()" class="p-2 rounded-lg text-slate-800 border border-border-secundary disabled:bg-primary/85 disabled:cursor-not-allowed">
+        Limpar
+      </button>
+
+      <button type="button" (click)="submitForm()" class="flex gap-2 p-2 bg-primary rounded-lg text-white">
+        Adicionar
+      </button>
+    </div>
+  </div>
+</form>

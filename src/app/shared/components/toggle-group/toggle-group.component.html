@@ -1,0 +1,10 @@
+<div class="flex gap-1 bg-[#E3E3E3] p-[3px] rounded-md text-[15px] h-[2.7rem]">
+  @for (item of list; track item.id) {
+    <a
+      [class.bg-white]="selectedId === item.id"
+      (click)="handleSelectItem(item.id)"
+      class="flex flex-grow items-center justify-center bg-white py-[5px] px-[10px] rounded-md text-text-800 cursor-pointer">
+      {{item.value}}
+    </a>
+  }
+</div>

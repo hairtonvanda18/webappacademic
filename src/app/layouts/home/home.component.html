@@ -1,0 +1,13 @@
+<div class="h-screen bg-background-background">
+  <app-aside />
+
+  <div [class]="'h-full ' + (asideService.state() ? 'ml-[256px]' : 'ml-[77px]')">
+    <app-header />
+
+    <div class="relative px-6 py-2 h-content pb-12 overflow-y-auto">
+      <router-outlet />
+    </div>
+
+    <app-footer />
+  </div>
+</div>

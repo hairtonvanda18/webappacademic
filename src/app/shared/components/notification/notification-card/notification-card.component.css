@@ -1,0 +1,12 @@
+.move {
+  animation: moveUp 300ms ease forwards;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60px);
+  }
+}
